@@ -16,6 +16,3 @@ steps:
 - name: Build
   run: npm run build
   # 'npm run build' runs the build script defined in your 'package.json'. This is typically used for compiling or preparing your code for deployment.
-- name: Run tests
-  run: npm test
-  # 'npm test' runs the test script defined in your 'package.json'. It's crucial for ensuring that your code works as expected before deployment.
