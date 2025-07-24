@@ -1,5 +1,13 @@
 {
-  "dependencies": {
-    "react": "^19.1.0"
-  }
+  "name": "github-action-ci-cd",
+  "version": "1.0.0",
+  "description": "hello world",
+  "main": "index.js",
+  "scripts": {
+  "test": "node test/sample.test.js",
+  "build": "echo 'Building project...'"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
