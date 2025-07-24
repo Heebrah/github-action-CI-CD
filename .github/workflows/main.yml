@@ -1,4 +1,4 @@
-name: Example Workflow
+name: build
 
 on: [push]
 
@@ -15,7 +15,7 @@ jobs:
         # Installs dependencies listed in 'package.json'.
 
       - name: Build
-        run: npm run build
+        run: npm start build
         # Runs the build script, typically to compile or bundle code.
 
       - name: Run tests
