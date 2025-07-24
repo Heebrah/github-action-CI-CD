@@ -1,21 +1,23 @@
 name: Example Workflow
+
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    # Steps will be defined next
-steps:
-- uses: actions/checkout@v2
-  # 'actions/checkout@v2' is a pre-made action that checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+      - uses: actions/checkout@v2
+        # 'actions/checkout@v2' checks out your repository so the workflow can access it.
 
-- name: Install dependencies
-  run: npm install
-  # 'npm install' installs the dependencies defined in your project's 'package.json' file.
+      - name: Install dependencies
+        run: npm install
+        # Installs dependencies listed in 'package.json'.
 
-- name: Build
-  run: npm run build
-  # 'npm run build' runs the build script defined in your 'package.json'. This is typically used for compiling or preparing your code for deployment.
-- name: Run tests
-  run: npm test
-  # 'npm test' runs the test script defined in your 'package.json'. It's crucial for ensuring that your code works as expected before deployment.
+      - name: Build
+        run: npm run build
+        # Runs the build script, typically to compile or bundle code.
+
+      - name: Run tests
+        run: npm test
+        # Executes your test suite to ensure code c
