@@ -1,0 +1,41 @@
+# .github/workflows/node.js.yml
+
+# Name of the workflow
+name: Node.js CI
+
+# Specifies when the workflow should be triggered
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Defines the jobs that the workflow will execute
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x,16.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (if script is present)
+        run: npm run build --if-present
+
+      - name: Run tests
+        run: npm test
+
+
+
