@@ -1,6 +1,6 @@
 # .github/workflows/node.js.yml
 # Name of the workflow
-name: Example Workflow
+name: Node.js CI
 on:
   push:
     branches: [ main ]
@@ -22,9 +22,9 @@ steps:
           node-version: ${{ matrix.node-version }}
 
 - name: Install dependencies
-  run: npm install
+  run: npm ci
   # 'npm install' installs the dependencies defined in your project's 'package.json' file.
 
-- name: Build
-  run: npm run build
-  # 'npm run build' runs the build script defined in your 'package.json'. This is typically used for compiling or preparing your code for deployment.
+- name: Build (if script is present)
+run: npm run build --if-present
+
