@@ -4,7 +4,7 @@ on:
   push:
     branches: [Dev-branch]
   pull_request:
-    branches: [main]
+    branches: [Dev-branch]
 
 env:
   GLOBAL_ENV_VAR: "Production"
@@ -40,7 +40,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/Dev-branch'
 
     steps:
       - name: Checkout repository
