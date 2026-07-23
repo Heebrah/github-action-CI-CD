@@ -1,1 +1,1 @@
-console.log("Running sample test...");
+console.log("Running samples of test...");
