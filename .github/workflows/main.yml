@@ -57,8 +57,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ env.Dockerhub_Repository }}/myapp:latest .
+          docker build -t ibdevop/myapp:latest .
 
       - name: Push Docker image
         run: |
-          docker push ${{ env.Dockerhub_Repository }}/myapp:latest
+          docker push ibdevop/myapp:latest
